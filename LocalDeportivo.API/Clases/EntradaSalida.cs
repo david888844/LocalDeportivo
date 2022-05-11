@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace LocalDeportivo.API.Models
+namespace LocalDeportivo.API.Clases
 {
     public class EntradaSalida
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace LocalDeportivo.API.Models
+namespace LocalDeportivo.API.Clases
 {
     public class Persona
     {

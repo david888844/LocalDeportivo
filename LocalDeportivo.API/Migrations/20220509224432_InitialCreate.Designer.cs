@@ -22,7 +22,7 @@ namespace LocalDeportivo.API.Migrations
                 .HasAnnotation("ProductVersion", "5.0.10")
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-            modelBuilder.Entity("LocalDeportivo.API.Models.Bodega", b =>
+            modelBuilder.Entity("LocalDeportivo.API.Clases.Bodega", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -38,7 +38,7 @@ namespace LocalDeportivo.API.Migrations
                     b.ToTable("Bodegas");
                 });
 
-            modelBuilder.Entity("LocalDeportivo.API.Models.Categoria", b =>
+            modelBuilder.Entity("LocalDeportivo.API.Clases.Categoria", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -54,7 +54,7 @@ namespace LocalDeportivo.API.Migrations
                     b.ToTable("Categorias");
                 });
 
-            modelBuilder.Entity("LocalDeportivo.API.Models.Cliente", b =>
+            modelBuilder.Entity("LocalDeportivo.API.Clases.Cliente", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -85,7 +85,7 @@ namespace LocalDeportivo.API.Migrations
                     b.ToTable("Clientes");
                 });
 
-            modelBuilder.Entity("LocalDeportivo.API.Models.DetalleFactura", b =>
+            modelBuilder.Entity("LocalDeportivo.API.Clases.DetalleFactura", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -123,7 +123,7 @@ namespace LocalDeportivo.API.Migrations
                     b.ToTable("DetalleFacturas");
                 });
 
-            modelBuilder.Entity("LocalDeportivo.API.Models.Empleado", b =>
+            modelBuilder.Entity("LocalDeportivo.API.Clases.Empleado", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -159,7 +159,7 @@ namespace LocalDeportivo.API.Migrations
                     b.ToTable("Empleados");
                 });
 
-            modelBuilder.Entity("LocalDeportivo.API.Models.EntradaSalida", b =>
+            modelBuilder.Entity("LocalDeportivo.API.Clases.EntradaSalida", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -212,7 +212,7 @@ namespace LocalDeportivo.API.Migrations
                     b.ToTable("EntradaSalidas");
                 });
 
-            modelBuilder.Entity("LocalDeportivo.API.Models.Factura", b =>
+            modelBuilder.Entity("LocalDeportivo.API.Clases.Factura", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -242,7 +242,7 @@ namespace LocalDeportivo.API.Migrations
                     b.ToTable("Facturas");
                 });
 
-            modelBuilder.Entity("LocalDeportivo.API.Models.Inventario", b =>
+            modelBuilder.Entity("LocalDeportivo.API.Clases.Inventario", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -264,7 +264,7 @@ namespace LocalDeportivo.API.Migrations
                     b.ToTable("Inventarios");
                 });
 
-            modelBuilder.Entity("LocalDeportivo.API.Models.Producto", b =>
+            modelBuilder.Entity("LocalDeportivo.API.Clases.Producto", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -311,7 +311,7 @@ namespace LocalDeportivo.API.Migrations
                     b.ToTable("Productos");
                 });
 
-            modelBuilder.Entity("LocalDeportivo.API.Models.Proveedor", b =>
+            modelBuilder.Entity("LocalDeportivo.API.Clases.Proveedor", b =>
                 {
                     b.Property<string>("CodigoProveedor")
                         .ValueGeneratedOnAdd()
@@ -335,7 +335,7 @@ namespace LocalDeportivo.API.Migrations
                     b.ToTable("Proveedores");
                 });
 
-            modelBuilder.Entity("LocalDeportivo.API.Models.Sede", b =>
+            modelBuilder.Entity("LocalDeportivo.API.Clases.Sede", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -365,13 +365,13 @@ namespace LocalDeportivo.API.Migrations
                     b.ToTable("Sedes");
                 });
 
-            modelBuilder.Entity("LocalDeportivo.API.Models.DetalleFactura", b =>
+            modelBuilder.Entity("LocalDeportivo.API.Clases.DetalleFactura", b =>
                 {
-                    b.HasOne("LocalDeportivo.API.Models.Factura", "FacturaId")
+                    b.HasOne("LocalDeportivo.API.Clases.Factura", "FacturaId")
                         .WithMany("DetalleFacturas")
                         .HasForeignKey("FacturaIdId");
 
-                    b.HasOne("LocalDeportivo.API.Models.Producto", "Producto")
+                    b.HasOne("LocalDeportivo.API.Clases.Producto", "Producto")
                         .WithMany()
                         .HasForeignKey("ProductoId");
 
@@ -380,34 +380,34 @@ namespace LocalDeportivo.API.Migrations
                     b.Navigation("Producto");
                 });
 
-            modelBuilder.Entity("LocalDeportivo.API.Models.Empleado", b =>
+            modelBuilder.Entity("LocalDeportivo.API.Clases.Empleado", b =>
                 {
-                    b.HasOne("LocalDeportivo.API.Models.Bodega", "EmpleadoBodega")
+                    b.HasOne("LocalDeportivo.API.Clases.Bodega", "EmpleadoBodega")
                         .WithMany("Empleados")
                         .HasForeignKey("EmpleadoBodegaId");
 
                     b.Navigation("EmpleadoBodega");
                 });
 
-            modelBuilder.Entity("LocalDeportivo.API.Models.EntradaSalida", b =>
+            modelBuilder.Entity("LocalDeportivo.API.Clases.EntradaSalida", b =>
                 {
-                    b.HasOne("LocalDeportivo.API.Models.Bodega", null)
+                    b.HasOne("LocalDeportivo.API.Clases.Bodega", null)
                         .WithMany("EntradaSalidas")
                         .HasForeignKey("BodegaId");
 
-                    b.HasOne("LocalDeportivo.API.Models.Empleado", "EntradaSalidaEmpleado")
+                    b.HasOne("LocalDeportivo.API.Clases.Empleado", "EntradaSalidaEmpleado")
                         .WithMany()
                         .HasForeignKey("EntradaSalidaEmpleadoId");
 
-                    b.HasOne("LocalDeportivo.API.Models.Producto", "EntradaSalidaProducto")
+                    b.HasOne("LocalDeportivo.API.Clases.Producto", "EntradaSalidaProducto")
                         .WithMany()
                         .HasForeignKey("EntradaSalidaProductoId");
 
-                    b.HasOne("LocalDeportivo.API.Models.Sede", "EntradaSalidaSede")
+                    b.HasOne("LocalDeportivo.API.Clases.Sede", "EntradaSalidaSede")
                         .WithMany()
                         .HasForeignKey("EntradaSalidaSedeId");
 
-                    b.HasOne("LocalDeportivo.API.Models.Inventario", null)
+                    b.HasOne("LocalDeportivo.API.Clases.Inventario", null)
                         .WithMany("EntradaSalidas")
                         .HasForeignKey("InventarioId");
 
@@ -418,20 +418,20 @@ namespace LocalDeportivo.API.Migrations
                     b.Navigation("EntradaSalidaSede");
                 });
 
-            modelBuilder.Entity("LocalDeportivo.API.Models.Factura", b =>
+            modelBuilder.Entity("LocalDeportivo.API.Clases.Factura", b =>
                 {
-                    b.HasOne("LocalDeportivo.API.Models.Cliente", null)
+                    b.HasOne("LocalDeportivo.API.Clases.Cliente", null)
                         .WithMany("Facturas")
                         .HasForeignKey("Clienteid");
                 });
 
-            modelBuilder.Entity("LocalDeportivo.API.Models.Producto", b =>
+            modelBuilder.Entity("LocalDeportivo.API.Clases.Producto", b =>
                 {
-                    b.HasOne("LocalDeportivo.API.Models.Proveedor", "Proveedor")
+                    b.HasOne("LocalDeportivo.API.Clases.Proveedor", "Proveedor")
                         .WithMany("Productos")
                         .HasForeignKey("ProveedorCodigoProveedor");
 
-                    b.HasOne("LocalDeportivo.API.Models.Categoria", "TipoProducto")
+                    b.HasOne("LocalDeportivo.API.Clases.Categoria", "TipoProducto")
                         .WithMany("Productos")
                         .HasForeignKey("TipoProductoId");
 
@@ -440,43 +440,43 @@ namespace LocalDeportivo.API.Migrations
                     b.Navigation("TipoProducto");
                 });
 
-            modelBuilder.Entity("LocalDeportivo.API.Models.Sede", b =>
+            modelBuilder.Entity("LocalDeportivo.API.Clases.Sede", b =>
                 {
-                    b.HasOne("LocalDeportivo.API.Models.Bodega", "SedeBodega")
+                    b.HasOne("LocalDeportivo.API.Clases.Bodega", "SedeBodega")
                         .WithMany()
                         .HasForeignKey("SedeBodegaId");
 
                     b.Navigation("SedeBodega");
                 });
 
-            modelBuilder.Entity("LocalDeportivo.API.Models.Bodega", b =>
+            modelBuilder.Entity("LocalDeportivo.API.Clases.Bodega", b =>
                 {
                     b.Navigation("Empleados");
 
                     b.Navigation("EntradaSalidas");
                 });
 
-            modelBuilder.Entity("LocalDeportivo.API.Models.Categoria", b =>
+            modelBuilder.Entity("LocalDeportivo.API.Clases.Categoria", b =>
                 {
                     b.Navigation("Productos");
                 });
 
-            modelBuilder.Entity("LocalDeportivo.API.Models.Cliente", b =>
+            modelBuilder.Entity("LocalDeportivo.API.Clases.Cliente", b =>
                 {
                     b.Navigation("Facturas");
                 });
 
-            modelBuilder.Entity("LocalDeportivo.API.Models.Factura", b =>
+            modelBuilder.Entity("LocalDeportivo.API.Clases.Factura", b =>
                 {
                     b.Navigation("DetalleFacturas");
                 });
 
-            modelBuilder.Entity("LocalDeportivo.API.Models.Inventario", b =>
+            modelBuilder.Entity("LocalDeportivo.API.Clases.Inventario", b =>
                 {
                     b.Navigation("EntradaSalidas");
                 });
 
-            modelBuilder.Entity("LocalDeportivo.API.Models.Proveedor", b =>
+            modelBuilder.Entity("LocalDeportivo.API.Clases.Proveedor", b =>
                 {
                     b.Navigation("Productos");
                 });
