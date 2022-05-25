@@ -23,19 +23,20 @@ namespace LocalDeportivo.API.Clases
         public int Factura { get; set; }
         public Factura FacturaId { get; set; }
 
-        public DetalleFactura()
+        public DetalleFactura(Producto producto)
         {
-            
+            Producto = producto;
         }
+
         public DetalleFactura CrearDetalleFactura(DetalleFactura entradaDetalleFactura)
         { 
             return entradaDetalleFactura;
         }
 
-        public DetalleFactura ListarDetalleFactura(int CodigoDetalleFactura)
+        public FacturaArchivo ListarDetalleFactura(int CodigoDetalleFactura)
         {
-            DetalleFactura DetalleFactura1 = new DetalleFactura();
-            return DetalleFactura1;
+            FacturaArchivo DetalleFactura  = new FacturaArchivo();
+            return DetalleFactura;
         }
 
         public int DescontarStock()

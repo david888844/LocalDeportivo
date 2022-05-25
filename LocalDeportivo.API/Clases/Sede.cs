@@ -20,7 +20,7 @@ namespace LocalDeportivo.API.Clases
         public string NumeroTelefonico { get; set; }
         public Bodega SedeBodega { get; set; }    
 
-        public Sede()
+        public Sede(Bodega sedeBodega)
         {
             
         }
@@ -36,9 +36,9 @@ namespace LocalDeportivo.API.Clases
             return ListaSedes;
         }
 
-        public Sede ActualizarSede()
+        public Bodega ActualizarSede()
         {
-            Sede Sede1 = new Sede();
+             Bodega Sede1= new Bodega();
             return  Sede1;
         }
 

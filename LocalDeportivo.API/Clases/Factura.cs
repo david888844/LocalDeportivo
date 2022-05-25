@@ -20,10 +20,10 @@ namespace LocalDeportivo.API.Clases
         public DateTime Fecha { get; set; }
         public ICollection<DetalleFactura> DetalleFacturas { get; set; }
 
-        public Factura()
+        public Factura(ICollection<DetalleFactura> detalleFactura)
 
         {
-            DetalleFacturas = new HashSet<DetalleFactura>();
+            DetalleFacturas = detalleFactura;
         }
         
         public Factura CrearFactura(Factura entradaFactura)
@@ -31,9 +31,9 @@ namespace LocalDeportivo.API.Clases
             return entradaFactura;
         }
 
-        public Factura ListarFacturaPorCodigo(int codigoFactura)
+        public FacturaArchivo ListarFacturaPorCodigo(int codigoFactura)
         {
-            Factura Codigo1 = new Factura();
+            FacturaArchivo Codigo1 = new FacturaArchivo();
             return Codigo1;
         }
     }
