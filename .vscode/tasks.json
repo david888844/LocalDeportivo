@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/LocalDeportivo.API/LocalDeportivo.API.csproj",
+                "${workspaceFolder}/LocalDeportivo/LocalDeportivo.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/LocalDeportivo.API/LocalDeportivo.API.csproj",
+                "${workspaceFolder}/LocalDeportivo/LocalDeportivo.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -33,7 +33,7 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/LocalDeportivo.API/LocalDeportivo.API.csproj"
+                "${workspaceFolder}/LocalDeportivo/LocalDeportivo.csproj"
             ],
             "problemMatcher": "$msCompile"
         }
