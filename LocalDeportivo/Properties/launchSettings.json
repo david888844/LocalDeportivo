@@ -8,6 +8,9 @@
       "sslPort": 0
     }
   },
+  "ConnectionStrings": {
+    "DefaultConnection": "Host=ec2-52-73-155-171.compute-1.amazonaws.com;Username=sxlyubqbiqdxbs;Password=9fbff24c8035677512122863e0fe5aba322060798fb845c2423ca6c0b3dad010;Database=dd1rb2cqud5q33;SSL Mode=Require;Trust Server Certificate=true "
+  },
   "profiles": {
     "IIS Express": {
       "commandName": "IISExpress",
