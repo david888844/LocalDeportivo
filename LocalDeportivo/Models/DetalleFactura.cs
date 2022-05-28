@@ -14,11 +14,11 @@ namespace LocalDeportivo.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CodigoDetalleFactura { get; set; }
         public string Descripcion { get; set; }
-        public Producto Producto { get; set; }
         public  int Cantidad { get; set; }
         public float Precio { get; set; }
         public int FacturaId { get; set; }
         public Factura Factura { get; set; }
+        public Producto Producto { get; set; }
 
         //public DetalleFactura(Producto producto)
         //{
